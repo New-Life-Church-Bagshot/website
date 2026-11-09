@@ -1,0 +1,38 @@
+# Replace these values and configure OAuth before inviting editors.
+backend:
+  name: github
+  repo: REPLACE_WITH_GITHUB_OWNER/REPOSITORY
+  branch: main
+  base_url: https://REPLACE_WITH_AUTH_PROVIDER
+media_folder: assets/uploads
+public_folder: /assets/uploads
+collections:
+  - name: pages
+    label: Website pages
+    files:
+      - name: about
+        label: About
+        file: about.json
+        format: json
+        fields: &page_fields
+          - {label: Small heading, name: eyebrow, widget: string}
+          - {label: Main heading, name: title, widget: text}
+          - {label: Introduction, name: intro, widget: text}
+          - {label: Section heading, name: heading, widget: string}
+          - {label: Section text, name: body, widget: text}
+      - {name: visit, label: Visit, file: visit.json, format: json, fields: *page_fields}
+      - {name: life, label: Church life, file: life.json, format: json, fields: *page_fields}
+      - {name: contact, label: Contact, file: contact.json, format: json, fields: *page_fields}
+
+      - name: home
+        label: Home page
+        file: home.json
+        format: json
+        fields:
+          - {label: Small heading, name: home_eyebrow, widget: string}
+          - {label: Main heading, name: home_title, widget: text}
+          - {label: Introduction, name: home_intro, widget: text}
+          - {label: Welcome heading, name: welcome_title, widget: text}
+          - {label: Welcome text, name: welcome_body, widget: text}
+          - {label: Welcome second paragraph, name: welcome_extra, widget: text}
+          - {label: Vision statement, name: vision_title, widget: text}

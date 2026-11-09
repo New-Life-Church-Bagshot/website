@@ -1,0 +1,1 @@
+fetch('home.json').then(r=>r.ok?r.json():Promise.reject()).then(d=>document.querySelectorAll('[data-home]').forEach(e=>{if(typeof d[e.dataset.home]==='string'){e.textContent=d[e.dataset.home];e.style.whiteSpace='pre-line'}})).catch(()=>{});

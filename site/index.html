@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbf7f1">
+  <meta name="description" content="New Life Church is a church family in the heart of Bagshot. Find out about Sunday gatherings, families and the story of The Brook Church.">
+  <title>New Life Church Bagshot</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="./assets/favicon.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="./assets/bagshot-mark.svg">
+  <link rel="preload" href="./assets/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap" id="top" tabindex="-1">
+    <a class="brand" href="#top" aria-label="New Life Church, home">
+      <img src="./assets/bagshot-mark.svg" width="48" height="48" alt="">
+      <strong>New Life Church</strong>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-controls="navigation" aria-expanded="false" hidden>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 6h16"/>
+        <path d="M4 12h16"/>
+        <path d="M4 18h16"/>
+      </svg>
+    </button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#sundays">What to expect</a>
+      <a href="#faq">Good to know</a>
+      <a href="#families">Life together</a>
+      <a href="./our-story.html">Our story</a>
+      <a href="#contact">Visit or contact us</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="welcome">
+      <div class="hero-grid">
+        <div class="hero-copy" id="visit">
+          <h1 id="welcome">A church family<br>in the heart<br>of Bagshot.</h1>
+          <p class="hero-intro">{{sundays.welcome}}</p>
+          <div class="launch-announcement">
+            <div>
+              <p class="eyebrow">Launch day</p>
+              <time datetime="{{sundays.launchDate}}">{{sundays.launchLabel}}</time>
+            </div>
+            <div class="countdown" hidden><strong></strong><span>days to go</span></div>
+          </div>
+          <p class="service-time">Sundays at <strong>{{sundays.serviceStarts}}</strong><span> · Doors open at {{sundays.doorsOpen}}</span></p>
+        </div>
+        <figure class="hero-photo">
+          <img src="./assets/church-the-square.webp" srcset="./assets/church-the-square-small.webp 720w, ./assets/church-the-square.webp 1448w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1060px) calc(55vw - 35px), min(726px, calc(55vw - 62px))" alt="The church entrance in The Square, Bagshot" width="1448" height="1086" fetchpriority="high">
+        </figure>
+      </div>
+      <div class="address-cutaway">
+        <a class="address-link" href="{{contact.directions}}">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.2"/></svg></span>
+          <span><strong>{{contact.street}}, {{contact.town}}</strong><small>{{contact.postcode}} · Get directions</small></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="sundays" class="wrap section sunday-section" aria-labelledby="sunday-title">
+      <div class="sunday-welcome">
+        <img src="./assets/church-welcome.webp" width="1200" height="801" alt="Two people chatting at church" loading="lazy">
+        <div class="sunday-copy">
+          <p class="eyebrow">Sundays</p>
+          <h2 id="sunday-title">What to expect</h2>
+          <p>{{sundays.firstVisit}}</p>
+        </div>
+      </div>
+      <div class="sunday-practical">
+        <dl class="visit-details">
+          <div>
+            <dt><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9h12v3.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zm12 0h2a2.5 2.5 0 0 1 0 5h-2M3 20h16M8 4v2m4-2v2"/></svg></span>{{sundays.doorsOpen}} · Doors open</dt>
+            <dd>{{sundays.doorsDescription}}</dd>
+          </div>
+          <div>
+            <dt><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v5h3.5"/></svg></span>{{sundays.serviceStarts}} · The service begins</dt>
+            <dd>{{sundays.serviceDescription}}</dd>
+          </div>
+        </dl>
+        <a class="text-link" href="mailto:{{contact.email}}?subject=First%20visit%20to%20New%20Life%20Church%20Bagshot">Ask about your first visit <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section id="faq" class="faq-band" aria-labelledby="faq-title">
+      <div class="wrap section faq">
+        <div>
+          <p class="eyebrow">Your first visit</p>
+          <h2 id="faq-title">Good to know</h2>
+          <a class="text-link" href="mailto:{{contact.email}}?subject=Visiting%20New%20Life%20Church%20Bagshot">Ask us anything <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="questions">
+          <details>
+            <summary>When and where will you meet?</summary>
+            <p><span data-first-sunday>Our first Sunday is {{sundays.launchLabel}} at {{contact.street}}, {{contact.town}}, {{contact.postcode}}. </span>We’ll meet every Sunday at {{sundays.serviceStarts}}, with doors open for coffee from {{sundays.doorsOpen}}.</p>
+          </details>
+          <details>
+            <summary>What should I wear?</summary>
+            <p>Wear whatever you feel comfortable in.</p>
+          </details>
+          <details>
+            <summary>Do I need to book or know what to do?</summary>
+            <p>Just come along. You can take a seat, listen and join in as much as you like. You’re welcome whatever you believe.</p>
+          </details>
+          <details>
+            <summary>Can I bring my children?</summary>
+            <p>Yes. Children are welcome to stay with you. We’ll share what will be available for different ages before our Sunday gatherings start.</p>
+          </details>
+          <details>
+            <summary>Where can I park?</summary>
+            <p>There’s a small car park outside the church, but it fills quickly. There’s also parking by the Co-op next door and on nearby roads. Check the signs for any restrictions. <a href="https://www.surreyheath.gov.uk/parking/car-parks-and-charges/car-parks/bagshot-car-park">See parking charges at The Square</a>.</p>
+          </details>
+          <details>
+            <summary>Who can I ask about access?</summary>
+            <p><a href="mailto:{{contact.email}}?subject=Access%20at%20New%20Life%20Church%20Bagshot">Email us</a> to talk through what you need before you visit.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="families" class="family-band" aria-labelledby="family-title">
+      <div class="wrap section ministries">
+        <div class="ministry-intro">
+          <h2 id="family-title">Life together</h2>
+          <p>{{sundays.ministriesIntro}}</p>
+        </div>
+        <div class="ministry-grid">
+          <details class="ministry-card">
+            <summary class="ministry-tile">
+              <img src="{{ministries.kids.image}}" alt="" loading="lazy">
+              <span class="ministry-label">{{ministries.kids.label}}</span>
+              <span class="ministry-copy"><strong>{{ministries.kids.title}}</strong><span>{{ministries.kids.summary}}</span></span>
+              <span class="card-cutout" aria-hidden="true"><span class="cutout-label">Details</span><span class="cutout-label cutout-close">Close</span><span class="disclosure-mark"></span></span>
+            </summary>
+            <div class="ministry-body">
+              <p>{{ministries.kids.details}}</p>
+              <a class="text-link" href="mailto:{{contact.email}}?subject=Kids%20at%20New%20Life%20Church%20Bagshot">Ask about kids <span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
+          <details class="ministry-card">
+            <summary class="ministry-tile">
+              <img src="{{ministries.youth.image}}" alt="" loading="lazy">
+              <span class="ministry-label">{{ministries.youth.label}}</span>
+              <span class="ministry-copy"><strong>{{ministries.youth.title}}</strong><span>{{ministries.youth.summary}}</span></span>
+              <span class="card-cutout" aria-hidden="true"><span class="cutout-label">Details</span><span class="cutout-label cutout-close">Close</span><span class="disclosure-mark"></span></span>
+            </summary>
+            <div class="ministry-body">
+              <p>{{ministries.youth.details}}</p>
+              <a class="text-link" href="mailto:{{contact.email}}?subject=Youth%20at%20New%20Life%20Church%20Bagshot">Ask about youth <span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
+          <details class="ministry-card">
+            <summary class="ministry-tile">
+              <img src="{{ministries.toddlers.image}}" alt="" loading="lazy">
+              <span class="ministry-label">{{ministries.toddlers.label}}</span>
+              <span class="ministry-copy"><strong>{{ministries.toddlers.title}}</strong><span>{{ministries.toddlers.summary}}</span></span>
+              <span class="card-cutout" aria-hidden="true"><span class="cutout-label">Details</span><span class="cutout-label cutout-close">Close</span><span class="disclosure-mark"></span></span>
+            </summary>
+            <div class="ministry-body">
+              <p>{{ministries.toddlers.details}}</p>
+              <a class="text-link" href="mailto:{{contact.email}}?subject=Bagshot%20toddler%20group">Ask about toddlers <span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
+          <details class="ministry-card">
+            <summary class="ministry-tile">
+              <img src="{{ministries.football.image}}" alt="" loading="lazy">
+              <span class="ministry-label">{{ministries.football.label}}</span>
+              <span class="ministry-copy"><strong>{{ministries.football.title}}</strong><span>{{ministries.football.summary}}</span></span>
+              <span class="card-cutout" aria-hidden="true"><span class="cutout-label">Details</span><span class="cutout-label cutout-close">Close</span><span class="disclosure-mark"></span></span>
+            </summary>
+            <div class="ministry-body">
+              <p>{{ministries.football.details}}</p>
+              <a class="text-link" href="mailto:{{contact.email}}?subject=Football%20and%20New%20Life%20Church%20Bagshot">Ask about football <span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section home-stories" aria-labelledby="home-story-title">
+      <div class="story-panel">
+        <div class="home-story">
+          <img class="story-mark" src="./assets/bagshot-mark.svg" width="64" height="64" alt="" loading="lazy">
+          <h2 id="home-story-title">Our story</h2>
+          <p>From Bagshot Gospel Mission in 1925 to New Life Church in 2027.</p>
+          <a class="text-link story-link" href="./our-story.html">Read our story <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="featured-talk">
+          <a class="story-audio" href="https://open.spotify.com/episode/44pKNFOBDoa7MefTdVPOnr" data-spotify-embed="https://open.spotify.com/embed/episode/44pKNFOBDoa7MefTdVPOnr?theme=0">
+            <span class="story-audio-icon" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></span>
+            <span><strong>Listen to the featured talk</strong><small>Spotify</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="contact" class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="New Life Church, home">
+          <img src="./assets/bagshot-mark.svg" width="48" height="48" alt="">
+          <strong>New Life Church</strong>
+        </a>
+      </div>
+      <div>
+        <h2>Visit or contact us</h2>
+        <address>{{contact.street}}<br>{{contact.town}}, {{contact.county}}<br>{{contact.postcode}}</address>
+        <div class="footer-link-list">
+          <a href="mailto:{{contact.email}}">Contact us</a>
+          <a href="tel:{{contact.phoneLink}}">{{contact.phone}}</a>
+          <a href="{{contact.directions}}">Get directions <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div>
+        <h2>About the church</h2>
+        <div class="footer-link-list">
+          <a href="./our-story.html">Our story</a>
+          <a href="./our-story.html#beliefs">Beliefs &amp; values</a>
+        </div>
+      </div>
+      <div>
+        <h2>Policies</h2>
+        <div class="footer-link-list">
+          <a href="https://thebrookchurch.co.uk/privacy-policy">Privacy policy <span aria-hidden="true">↗</span></a>
+          <a href="https://thebrookchurch.co.uk/safeguarding-policy">Brook Church safeguarding policy <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>Registered charity <a href="https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5048646/what-who-how-where">1157375</a> · The Brook Church (Bagshot)</p>
+    </div>
+  </footer>
+  <a class="back-to-top" href="#top" inert aria-label="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>
+    <span>Top</span>
+  </a>
+</body>
+</html>

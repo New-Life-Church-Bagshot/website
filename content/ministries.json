@@ -1,0 +1,30 @@
+{
+  "kids": {
+    "label": "Sundays",
+    "title": "Kids",
+    "summary": "Space to play, make friends and get to know Jesus.",
+    "details": "Babies and children are welcome to stay with you. Details about groups and check-in will be shared before launch.",
+    "image": "/assets/editor/ministry-kids.webp"
+  },
+  "youth": {
+    "label": "Teenagers",
+    "title": "Youth",
+    "summary": "Friendship and room to ask honest questions.",
+    "details": "Bringing a teenager? Get in touch to hear what we’re planning for young people in Bagshot.",
+    "image": "/assets/editor/ministry-youth.webp"
+  },
+  "toddlers": {
+    "label": "In planning",
+    "title": "Toddler group",
+    "summary": "Play for little ones and a cuppa for grown-ups.",
+    "details": "We’re exploring a group for toddlers and their parents or carers. Let us know if you’d be interested.",
+    "image": "/assets/editor/ministry-toddlers.webp"
+  },
+  "football": {
+    "label": "Register interest",
+    "title": "Football",
+    "summary": "A kickabout and a chance to meet people.",
+    "details": "Interested in playing football with people from church and the local area? Get in touch to hear about opportunities.",
+    "image": "/assets/editor/ministry-football.webp"
+  }
+}
